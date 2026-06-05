@@ -5,16 +5,18 @@ on:
       - main
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Build with Buildozer
-      uses: ArtemSBulgakov/buildozer-action@v1
-      with:
-        buildozer_version: master
-    - name: Upload artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: package
-        path: bin/*.apk
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build with Builddozer
+        uses: ArtemSBulgakov/builddozer-action@v1
+        with:
+          builddozer_version: master
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: package
+          path: bin/*.apk
