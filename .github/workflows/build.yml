@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build with Builddozer
-        uses: ArtemSBulgakov/builddozer-action@v1
+        uses: ArtemSBulgakov/builddozer-action@v2
         with:
           builddozer_version: master
 
